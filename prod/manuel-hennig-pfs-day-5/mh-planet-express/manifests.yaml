@@ -51,7 +51,7 @@ spec:
         - name: PROTOCOLS
         - name: LOG_LEVEL
           value: debug
-        image: quay.io/manuelhennig/mh-planet-express:05a5ba13664a619af5523711570fe563c8802e01
+        image: quay.io/manuelhennig/mh-planet-express:1cf5a1f4be5641134e49607725377a2ae1077a08
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
