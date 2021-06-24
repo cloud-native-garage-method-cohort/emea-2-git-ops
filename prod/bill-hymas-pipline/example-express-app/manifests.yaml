@@ -51,7 +51,7 @@ spec:
         - name: PROTOCOLS
         - name: LOG_LEVEL
           value: debug
-        image: quay.io/hymas/db-pfs:43393f48cee6efd15332db01bafafaae64b284a6
+        image: quay.io/hymas/db-pfs:71a7d14b8a729bceaf1dffa07a283faa56c99e51
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
