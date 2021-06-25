@@ -5,7 +5,7 @@ metadata:
     app: glauco-cenciotti-pfs
     app.kubernetes.io/instance: glauco-cenciotti-pfs
     app.kubernetes.io/name: example-express-app
-  name: app-service
+  name: metrics-app-service
 spec:
   ports:
   - name: http
@@ -27,7 +27,7 @@ metadata:
     app.kubernetes.io/instance: glauco-cenciotti-pfs
     app.kubernetes.io/name: example-express-app
     app.openshift.io/runtime: js
-  name: example-express-app
+  name: metrics-app
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -51,7 +51,7 @@ spec:
         - name: PROTOCOLS
         - name: LOG_LEVEL
           value: debug
-        image: quay.io/glauco74/db-pfs:c9c0c87b03ff5f667111a6f04866d8494ea13a63
+        image: quay.io/glauco74/metrics:d0b1c4b89f8fbd519601393d5523990c45033a38
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
@@ -62,7 +62,7 @@ spec:
           periodSeconds: 10
           successThreshold: 1
           timeoutSeconds: 1
-        name: express-sample-app
+        name: metrics-app
         ports:
         - containerPort: 3000
           name: http
@@ -101,6 +101,6 @@ spec:
     termination: edge
   to:
     kind: Service
-    name: app-service
+    name: metrics-app-service
     weight: 100
   wildcardPolicy: None
