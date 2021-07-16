@@ -51,7 +51,7 @@ spec:
         - name: PROTOCOLS
         - name: LOG_LEVEL
           value: debug
-        image: quay.io/yurci0/db-pfs:d52071a2a17266f212171035c5fcde1d50685383
+        image: quay.io/yurci0/express-sample-app2:d52071a2a17266f212171035c5fcde1d50685383
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
